@@ -1,0 +1,110 @@
+body {
+    background-color: azure;
+}
+
+#calculator {
+    display: grid;
+    grid-template-areas: 
+        "display display display display display"
+        "numpad numpad numpad oppad oppad"
+        "numpad numpad numpad oppad oppad"
+        "numpad numpad numpad oppad oppad"
+        "numpad numpad numpad oppad oppad"
+    ;
+    grid-auto-columns: auto;
+    grid-auto-rows: auto;
+
+    margin: auto;
+    width: 340px;
+    height: 280px;
+    border: 4px solid black;
+    border-radius: 16px;
+    background-color: #1f1f1f;
+}
+
+#display {
+    grid-area: display;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+
+    height: 50px;
+    padding: 2px 4px;
+    border: 2px solid white;
+    border-radius: 12px;
+    color: white;
+    font-size: 24px;
+}
+
+#numpad {
+    grid-area: numpad;
+    width: 230px;
+}
+
+#oppad {
+    grid-area: oppad;
+    width: 100px;
+}
+
+#upper-num-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    
+}
+
+#lower-num-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 1fr;
+}
+
+#btn-0 {
+    grid-column: 1 / 6;
+}
+
+#btn-equals {
+    grid-column: 7 / 11;
+}
+
+#oppad {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.num-btn, .op-btn {
+    display: flex;
+    margin: 2px;
+    border: 2px solid white;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.num-btn:hover, .op-btn:hover {
+    border-color: gray;
+}
+
+.num-btn:active:hover, .op-btn:active:hover {
+    background-color: #8f8f8f;
+}
+
+.btn-size-1 {
+    width: 60px;
+    height: 40px;
+}
+
+.btn-size-2 {
+    width: 120px;
+    height: 40px;
+}
+
+.btn-size-3 {
+    width: 80px;
+    height: 40px;
+}

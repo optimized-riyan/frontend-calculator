@@ -2,43 +2,43 @@ let display = document.getElementById("display");
 let clearFlag = false;
 
 document.getElementById("btn-1").addEventListener("click", () => {
-    display.innerText += "1";
+    appendCharToDisplay("1");
 });
 
 document.getElementById("btn-2").addEventListener("click", () => {
-    display.innerText += "2";
+    appendCharToDisplay("2");
 });
 
 document.getElementById("btn-3").addEventListener("click", () => {
-    display.innerText += "3";
+    appendCharToDisplay("3");
 });
 
 document.getElementById("btn-4").addEventListener("click", () => {
-    display.innerText += "4";
+    appendCharToDisplay("4");
 });
 
 document.getElementById("btn-5").addEventListener("click", () => {
-    display.innerText += "5";
+    appendCharToDisplay("5");
 });
 
 document.getElementById("btn-6").addEventListener("click", () => {
-    display.innerText += "6";
+    appendCharToDisplay("6");
 });
 
 document.getElementById("btn-7").addEventListener("click", () => {
-    display.innerText += "7";
+    appendCharToDisplay("7");
 });
 
 document.getElementById("btn-8").addEventListener("click", () => {
-    display.innerText += "8";
+    appendCharToDisplay("8");
 });
 
 document.getElementById("btn-9").addEventListener("click", () => {
-    display.innerText += "9";
+    appendCharToDisplay("9");
 });
 
 document.getElementById("btn-0").addEventListener("click", () => {
-    display.innerText += "0";
+    appendCharToDisplay("0");
 });
 
 document.getElementById("btn-equals").addEventListener("click", () => {
@@ -48,27 +48,27 @@ document.getElementById("btn-equals").addEventListener("click", () => {
 });
 
 document.getElementById("btn-plus").addEventListener("click", () => {
-    display.innerText += "+";
+    appendCharToDisplay("+");
 });
 
 document.getElementById("btn-minus").addEventListener("click", () => {
-    display.innerText += "-";
+    appendCharToDisplay("-");
 });
 
 document.getElementById("btn-mul").addEventListener("click", () => {
-    display.innerText += "*";
+    appendCharToDisplay("*");
 });
 
 document.getElementById("btn-div").addEventListener("click", () => {
-    display.innerText += "/";
+    appendCharToDisplay("/");
 });
 
 document.getElementById("btn-left-brac").addEventListener("click", () => {
-    display.innerText += "(";
+    appendCharToDisplay("(");
 });
 
 document.getElementById("btn-right-brac").addEventListener("click", () => {
-    display.innerText += ")";
+    appendCharToDisplay(")");
 });
 
 document.getElementById("btn-backspace").addEventListener("click", () => {
@@ -79,6 +79,9 @@ document.getElementById("btn-clear").addEventListener("click", () => {
     display.innerText = "";
 });
 
+function appendCharToDisplay(c) {
+    display.innerText += c;
+}
 
 
 function isOperator(char) {
@@ -112,10 +115,12 @@ function applyOperation(operator, operand1, operand2) {
             return operand1 * operand2;
         case '/':
             if (operand2 === 0) {
+                display.innerText = "Invalid expression";
                 throw new Error("Division by zero error");
             }
             return operand1 / operand2;
         default:
+            display.innerText = "Invalid expression";
             throw new Error("Invalid operator: " + operator);
     }
 }
